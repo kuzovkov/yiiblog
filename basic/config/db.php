@@ -6,6 +6,7 @@ return [
     'username' => 'user1',
     'password' => 'userp@ssw0rd',
     'charset' => 'utf8',
+    'tablePrefix' => 'bl_'
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
