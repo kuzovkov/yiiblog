@@ -43,13 +43,13 @@ $this->registerMetaTag([
 					<table class="button_subscribe">
 						<tr>
 							<td>
-								<input type="image" src="images/button_subscribe_left.png" alt="Добавить сайт" />
+								<input type="image" src="/images/button_subscribe_left.png" alt="Добавить сайт" />
 							</td>
 							<td class="center">
 								<?= Html::submitButton('Добавить сайт', ['class' => 'bg_center'])?>
 							</td>
 							<td>
-								<input type="image" src="images/button_subscribe_right.png" alt="Добавить сайт" />
+								<input type="image" src="/images/button_subscribe_right.png" alt="Добавить сайт" />
 							</td>
 						</tr>
 					</table>

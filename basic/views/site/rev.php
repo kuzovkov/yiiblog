@@ -16,7 +16,7 @@ $this->registerMetaTag([
 	<?php include "likes.php"; ?>
 	<div class="post_text">
 		<p class="center">
-			<img src="/web/images/reviews.png" alt="Видеоотзывы" />
+			<img src="/images/reviews.png" alt="Видеоотзывы" />
 		</p>
 		<p>В последнее время в Интернете стало очень много самых различных учителей по созданию сайтов. И, на мой взгляд, самый важный критерий качества материалов того или иного учителя - это отзывы его учеников.</p>
 		<p>По моему мнению, они должны быть в обязательном порядке либо в социальных сетях, где виден отзыв и виден аккаунт этого человека. Такие отзывы у меня есть тут: <a href="http://vk.com/myrusakov">http://vk.com/myrusakov</a> и тут <a href="http://vk.com/rusakovmy">http://vk.com/rusakovmy</a>.</p>

@@ -17,7 +17,7 @@ $this->registerMetaTag([
 		<?php include "likes.php"; ?>
 	<div class="post_text">
 		<p class="center">
-			<img src="/web/images/author.png" alt="Об авторе" />
+			<img src="/images/author.png" alt="Об авторе" />
 		</p>
 		<p>Спасибо, что захотели поинтересоваться автором этого блога! Меня зовут <b>Русаков Михаил Юрьевич</b>.</p>
 		<p>Для тех, кому интересно, как я вообще начинал (а начинал я абсолютно с нуля, как и многие из Вас, думаю), посмотрите это видео, которое так и называется: <a rel="external" href="<?=Yii::$app->urlManager->createUrl(['site/post', 'id' => 28])?>">Моя история</a>.</p>

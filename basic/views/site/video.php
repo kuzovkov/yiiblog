@@ -16,7 +16,7 @@ $this->registerMetaTag([
 	<?php include "likes.php"; ?>
 	<div class="post_text">
 		<p class="center">
-			<img src="/web/images/video.png" alt="Видеокурсы от Михаила Русакова" />
+			<img src="/images/video.png" alt="Видеокурсы от Михаила Русакова" />
 		</p>
 		<p>Есть <b>несколько вариантов обучения созданию сайтов</b>. Давайте их разберём:</p>
 		<ul>

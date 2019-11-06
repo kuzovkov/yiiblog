@@ -18,7 +18,7 @@ $this->registerMetaTag([
 	<?php include "likes.php"; ?>
 	<div class="post_text">
 		<p class="center">
-			<img src="/web/images/subscribe.png" alt="Выпуски рассылки" />
+			<img src="/images/subscribe.png" alt="Выпуски рассылки" />
 		</p>
 		<p>В этом разделе я решил выложить все выпуски своей рассылки. Раньше их видели только мои подписчики, но письма очень часто теряются, не доходят, случайно удаляются. В результате, человек просто не получил очень важный для него выпуск.</p>
 		<p>Чтобы исправить эту проблему, я просто буду выкладывать в этом разделе все новые выпуски своей рассылки. Разумеется, узнавать о выходе новых выпусков будут только мои подписчики. Поэтому если Вы не хотите постоянно проверять появились ли новые выпуски или нет, просто подпишитесь на мою рассылку.</p>
@@ -29,7 +29,7 @@ $this->registerMetaTag([
 			<table>
 				<tr>
 					<td class="arrow">
-						<img src="/web/images/left.png" alt="Влево" onclick="changeMiniCourse(false, 'minicourses_list')" />
+						<img src="/images/left.png" alt="Влево" onclick="changeMiniCourse(false, 'minicourses_list')" />
 					</td>
 					<td id="minicourses_list">
 						<?php foreach ($minicourses as $course) { ?>
@@ -43,7 +43,7 @@ $this->registerMetaTag([
 						<?php } ?>
 					</td>
 					<td class="arrow">
-						<img src="/web/images/right.png" alt="Вправо" onclick="changeMiniCourse(true, 'minicourses_list')" />
+						<img src="/images/right.png" alt="Вправо" onclick="changeMiniCourse(true, 'minicourses_list')" />
 					</td>
 				</tr>
 			</table>

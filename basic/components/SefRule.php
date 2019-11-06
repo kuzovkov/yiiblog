@@ -25,6 +25,7 @@ class SefRule extends UrlRule
 			if (isset($params["page"])) return "search.html?q=".$params["q"]."&page=".$params["page"];
 			else return "search.html?q=".$params["q"];	
 		}
+        $link = $route;
 		if (count($params)) {
 			$link .= "?";
 			$page = false;

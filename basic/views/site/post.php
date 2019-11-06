@@ -19,13 +19,13 @@ $this->registerMetaTag([
 				<table class="post_info">
 					<tr>
 						<td>
-							<img src="/web/images/date.png" alt="Дата" />
+							<img src="/images/date.png" alt="Дата" />
 						</td>
 						<td>
 							<p><?=$post->date?></p>
 						</td>
 						<td class="right">
-							<img src="/web/images/hits.png" alt="Просмотров" />
+							<img src="/images/hits.png" alt="Просмотров" />
 						</td>
 						<td class="center">
 							<p><?=$post->hits?></p>
