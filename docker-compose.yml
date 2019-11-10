@@ -38,6 +38,7 @@ services:
        DB_USER: user1
        DB_NAME: yiiblog
        DB_PASSWORD: userp@ssw0rd
+       YII_ENV_DEV: 1
      volumes:
         - ./basic:/var/www/html
 volumes:

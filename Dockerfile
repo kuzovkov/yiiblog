@@ -5,7 +5,8 @@ RUN apk add --no-cache \
 # in theory, docker-entrypoint.sh is POSIX-compliant, but priority is a working, consistent image
 		bash \
 # BusyBox sed is not sufficient for some of our sed expressions
-		sed
+		sed \
+		git
 
 # install the PHP extensions we need (https://make.wordpress.org/hosting/handbook/handbook/server-environment/#php-extensions)
 RUN set -ex; \
@@ -83,5 +84,4 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
 php -r "unlink('composer-setup.php');" && \
 chmod a+x /usr/local/bin/composer
-
 CMD ["app-start"]

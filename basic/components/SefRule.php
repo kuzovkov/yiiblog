@@ -9,7 +9,18 @@ class SefRule extends UrlRule
 {
 	public $connectionID = 'db';
 	
-	public function init()
+	private $routemap = [
+        'site/video' => 'video',
+        'site/rev' => 'rev',
+        'site/sites' => 'sites',
+        'site/author' => 'author',
+        'admin/admin/login' => 'login',
+        'admin/admin/logout' => 'logout',
+        'admin/admin/index' => 'admin'
+
+    ];
+
+    public function init()
 	{
 		if ($this->name === null) $this->name = __CLASS__;
 	}
@@ -26,7 +37,8 @@ class SefRule extends UrlRule
 			else return "search.html?q=".$params["q"];	
 		}
         $link = $route;
-		if (count($params)) {
+		$page = null;
+        if (count($params)) {
 			$link .= "?";
 			$page = false;
 			foreach ($params as $key => $value)
@@ -40,10 +52,11 @@ class SefRule extends UrlRule
 			}
 			$link = substr($link, 0, -1);
 		}
-		$sef = Sef::find()->where(["link" => $link])->one();
-		if ($sef) {
-			if ($page) return $sef->link_sef.".html?page=$page";
-			else return $sef->link_sef.".html";
+		//$sef = Sef::find()->where(["link" => $link])->one();
+		$sef = isset($this->routemap[$link])? $this->routemap[$link] : false;
+        if ($sef) {
+			if ($page) return $sef.".html?page=$page";
+			else return $sef.".html";
 		}
 		return false;
 	}
@@ -53,14 +66,14 @@ class SefRule extends UrlRule
 		$pathInfo = $request->getPathInfo();
 		if (preg_match('%^(.*)\.html$%', $pathInfo, $matches))
 		{
-			
 			$link_sef = $matches[1];
-			$sef = Sef::find()->where(["link_sef" => $link_sef])->one();
-			if ($sef) {
-				$link_data = explode("?", $sef->link);
+			//$sef = Sef::find()->where(["link_sef" => $link_sef])->one();
+			$sef = array_search($link_sef, $this->routemap);
+            if ($sef) {
+				$link_data = explode("?", $sef);
 				$route = $link_data[0];
 				$params = array();
-				if ($link_data[1])
+				if (isset($link_data[1]) && $link_data[1])
 				{
 					$temp = explode("&", $link_data[1]);
 					foreach ($temp as $t)

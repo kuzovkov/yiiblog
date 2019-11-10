@@ -37,6 +37,7 @@ $model = new SearchForm();
         <div id="container">
             <div id="header">
                 <img src="/images/header.png" alt="Шапка сайта" />
+
             </div>
             <div id="topmenu">
                 <ul>
@@ -64,6 +65,9 @@ $model = new SearchForm();
                         <a  href="<?=Yii::$app->urlManager->createUrl(["site/sites"])?>" <?php if ($action == "sites") { ?>class="active"<?php } ?>>
                             Сайты учеников							</a>
                     </li>
+                    <li>
+                        <a href="<?php echo Yii::$app->urlManager->createUrl('admin/admin/login');?>">Dashboard</a>
+                    </li>
                 </ul>
                 <div id="form_search">
                     <?php $form = ActiveForm::begin(); ?>
@@ -80,6 +84,7 @@ $model = new SearchForm();
                     <?php ActiveForm::end(); ?>
                 </div>
                 <div class="clear"></div>
+
             </div>
             <div>
                 <table id="content">

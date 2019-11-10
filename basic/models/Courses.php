@@ -2,6 +2,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use Yii;
 
 class Courses extends ActiveRecord
 {
@@ -14,5 +15,13 @@ class Courses extends ActiveRecord
 		$this->img = "/web/images/courses/".$this->alias.".png";
 		$this->order = "http://srs.myrusakov.ru/order?product_ids=".$this->srs_id;
 	}
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return Yii::$app->db->tablePrefix . 'courses';
+    }
 }
 ?>
