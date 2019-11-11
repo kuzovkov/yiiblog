@@ -57,7 +57,8 @@ class AdminController extends Controller
 	{
 
 	    if ($action->id !== 'login' && Yii::$app->user->isGuest) {
-            return $this->goHome();
+            $this->layout = 'main';
+            return $this->redirect(Yii::$app->urlManager->createUrl(['admin/admin/login']));
         }
         return true;
 	}

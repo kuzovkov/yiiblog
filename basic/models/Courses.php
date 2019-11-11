@@ -23,5 +23,7 @@ class Courses extends ActiveRecord
     {
         return Yii::$app->db->tablePrefix . 'courses';
     }
+
+
 }
 ?>

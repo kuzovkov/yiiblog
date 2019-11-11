@@ -16,7 +16,11 @@ class SefRule extends UrlRule
         'site/author' => 'author',
         'admin/admin/login' => 'login',
         'admin/admin/logout' => 'logout',
-        'admin/admin/index' => 'admin'
+        'admin/admin/index' => 'dashboard',
+        'admin/courses' => 'dashboard/courses',
+        'admin/courses/create' => 'dashboard/addcourse',
+        'admin/minicourses' => 'dashboard/minicourses',
+        'admin/minicourses/create' => 'dashboard/addminicourse'
 
     ];
 

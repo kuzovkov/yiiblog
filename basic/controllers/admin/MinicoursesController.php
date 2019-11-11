@@ -3,17 +3,17 @@
 namespace app\controllers\admin;
 
 use Yii;
-use app\models\Courses;
-use app\models\CoursesSearch;
+use app\models\Minicourses;
+use app\models\MinicoursesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\base\Module;
 
 /**
- * CoursesController implements the CRUD actions for Courses model.
+ * MinicoursesController implements the CRUD actions for Minicourses model.
  */
-class CoursesController extends Controller
+class MinicoursesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -38,6 +38,7 @@ class CoursesController extends Controller
 
     public function beforeAction($action)
     {
+
         if (Yii::$app->user->isGuest) {
             $this->layout = 'main';
             return $this->redirect(Yii::$app->urlManager->createUrl(['admin/admin/login']));
@@ -46,12 +47,12 @@ class CoursesController extends Controller
     }
 
     /**
-     * Lists all Courses models.
+     * Lists all Minicourses models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CoursesSearch();
+        $searchModel = new MinicoursesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -61,7 +62,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Displays a single Courses model.
+     * Displays a single Minicourses model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -74,13 +75,13 @@ class CoursesController extends Controller
     }
 
     /**
-     * Creates a new Courses model.
+     * Creates a new Minicourses model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Courses();
+        $model = new Minicourses();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,7 +93,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Updates an existing Courses model.
+     * Updates an existing Minicourses model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -112,7 +113,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Deletes an existing Courses model.
+     * Deletes an existing Minicourses model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -126,15 +127,15 @@ class CoursesController extends Controller
     }
 
     /**
-     * Finds the Courses model based on its primary key value.
+     * Finds the Minicourses model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Courses the loaded model
+     * @return Minicourses the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Courses::findOne($id)) !== null) {
+        if (($model = Minicourses::findOne($id)) !== null) {
             return $model;
         }
 

@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Courses */
+/* @var $model app\models\Minicourses */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="courses-form">
+<div class="minicourses-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -16,15 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'did')->textInput() ?>
 
-    <?= $form->field($model, 'srs_id')->textInput() ?>
-
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'alias')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'price')->textInput() ?>
+    <?= $form->field($model, 'default')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

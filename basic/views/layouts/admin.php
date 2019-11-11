@@ -180,35 +180,29 @@ $action = Yii::$app->controller->action->id;
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Courses <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
+                                        <!--<li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Courses</a>
                                             <div id="submenu-1-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">E Commerce Dashboard</a>
+                                                        <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses');?>">List</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product.html">Product List</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
+                                                        <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses');?>">Add new</a>
                                                     </li>
                                                 </ul>
                                             </div>
+                                        </li>-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses');?>">List</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Finance</a>
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/courses/create');?>">Add new</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Sales</a>
-                                        </li>
-                                        <li class="nav-item">
+                                        <!--<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
                                             <div id="submenu-1-1" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
@@ -223,21 +217,21 @@ $action = Yii::$app->controller->action->id;
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/minicourses');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Minicourses</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/cards.html">Cards <span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/minicourses');?>">List<span class="badge badge-secondary"></span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general.html">General</a>
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/minicourses/create');?>">Add new</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!--<li class="nav-item">
                                             <a class="nav-link" href="pages/carousel.html">Carousel</a>
                                         </li>
                                         <li class="nav-item">
@@ -251,7 +245,7 @@ $action = Yii::$app->controller->action->id;
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/tabs.html">Tabs</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                             </li>
