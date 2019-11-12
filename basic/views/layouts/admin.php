@@ -23,6 +23,7 @@ $action = Yii::$app->controller->action->id;
     <head>
         <!-- Required meta tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="<?= Yii::$app->charset ?>">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
@@ -250,6 +251,67 @@ $action = Yii::$app->controller->action->id;
                                 </div>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/posts');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-rocket"></i>Posts</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/posts');?>">List<span class="badge badge-secondary"></span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/posts/create');?>">Add new</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/reviews');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Reviews</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/reviews');?>">List<span class="badge badge-secondary"></span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/reviews/create');?>">Add new</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sites');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Sites</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sites');?>">List<span class="badge badge-secondary"></span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sites/create');?>">Add new</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sef');?>" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Sef</a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sef');?>">List<span class="badge badge-secondary"></span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo Yii::$app->urlManager->createUrl('admin/sef/create');?>">Add new</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+
+
+
+
+
+
+                            <!--
+                            <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Chart</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -443,7 +505,7 @@ $action = Yii::$app->controller->action->id;
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </nav>
@@ -458,7 +520,11 @@ $action = Yii::$app->controller->action->id;
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
-                    <?=$content?>
+                    <div class="wrap">
+                        <div class="container">
+                            <?=$content?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -505,13 +571,13 @@ $action = Yii::$app->controller->action->id;
     <!-- sparkline js -->
     <script src="/concept/assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
     <!-- morris js -->
-    <script src="/concept/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="/concept/assets/vendor/charts/morris-bundle/morris.js"></script>
+    <!--<script src="/concept/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="/concept/assets/vendor/charts/morris-bundle/morris.js"></script>-->
     <!-- chart c3 js -->
-    <script src="/concept/assets/vendor/charts/c3charts/c3.min.js"></script>
+    <!--<script src="/concept/assets/vendor/charts/c3charts/c3.min.js"></script>
     <script src="/concept/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="/concept/assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="/concept/assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="/concept/assets/libs/js/dashboard-ecommerce.js"></script>-->
 
     <?php $this->endBody() ?>
     </body>

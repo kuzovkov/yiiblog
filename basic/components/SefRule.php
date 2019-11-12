@@ -20,7 +20,15 @@ class SefRule extends UrlRule
         'admin/courses' => 'dashboard/courses',
         'admin/courses/create' => 'dashboard/addcourse',
         'admin/minicourses' => 'dashboard/minicourses',
-        'admin/minicourses/create' => 'dashboard/addminicourse'
+        'admin/minicourses/create' => 'dashboard/addminicourse',
+        'admin/posts' => 'dashboard/posts',
+        'admin/posts/create' => 'dashboard/addpost',
+        'admin/reviews' => 'dashboard/reviews',
+        'admin/reviews/create' => 'dashboard/addreview',
+        'admin/sites' => 'dashboard/sites',
+        'admin/sites/create' => 'dashboard/addsite',
+        'admin/sef' => 'dashboard/sef',
+        'admin/sef/create' => 'dashboard/addsef',
 
     ];
 

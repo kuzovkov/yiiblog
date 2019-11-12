@@ -52,5 +52,13 @@ class Posts extends ActiveRecord
 			$number++;
 		}
 	}
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return Yii::$app->db->tablePrefix . 'posts';
+    }
 }
 ?>
