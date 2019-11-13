@@ -30,11 +30,9 @@ $action = Yii::$app->controller->action->id;
         <?php $this->head() ?>
         <link href="/web/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-
         <!-- Bootstrap CSS -->
-        
-        
-        <link rel="stylesheet" href="/concept/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+
         <link href="/concept/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
         <link rel="stylesheet" href="/concept/assets/libs/css/style.css">
         <link rel="stylesheet" href="/concept/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
@@ -43,6 +41,14 @@ $action = Yii::$app->controller->action->id;
         <link rel="stylesheet" href="/concept/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="/concept/assets/vendor/charts/c3charts/c3.css">
         <link rel="stylesheet" href="/concept/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+
+
+        <!--[if lte IE8]>
+        <link href="/css/ie.css" rel="stylesheet">
+        <![endif]-->
+        <link href="/assets/20baa670/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="/concept/assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link href="/css/main.css" rel="stylesheet">
         <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
     </head>
 
@@ -538,9 +544,9 @@ $action = Yii::$app->controller->action->id;
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
+                                <!--<a href="javascript: void(0);">About</a>
                                 <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
+                                <a href="javascript: void(0);">Contact Us</a>-->
                             </div>
                         </div>
                     </div>
@@ -570,6 +576,8 @@ $action = Yii::$app->controller->action->id;
     <script src="/concept/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
     <!-- sparkline js -->
     <script src="/concept/assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="/assets/20baa670/js/bootstrap.js"></script>
+    <!--<script src="/assets/20baa670/js/bootstrap.js"></script>-->
     <!-- morris js -->
     <!--<script src="/concept/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
     <script src="/concept/assets/vendor/charts/morris-bundle/morris.js"></script>-->
