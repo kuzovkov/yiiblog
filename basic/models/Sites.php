@@ -6,6 +6,20 @@ use Yii;
 
 class Sites extends ActiveRecord
 {
+
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['address', 'address'], 'required', 'message' => 'Invalid URL'],
+            ['description', 'string'],
+            [['active'], 'boolean'],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
