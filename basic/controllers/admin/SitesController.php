@@ -83,10 +83,6 @@ class SitesController extends Controller
     {
         $model = new Sites();
 
-        //var_dump(Yii::$app->request->post());
-        //var_dump($model->load(Yii::$app->request->post()));
-        //var_dump($model);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

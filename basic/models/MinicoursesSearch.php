@@ -20,6 +20,7 @@ class MinicoursesSearch extends Minicourses
         return [
             [['id', 'did', 'default'], 'integer'],
             [['title', 'img'], 'safe'],
+
         ];
     }
 

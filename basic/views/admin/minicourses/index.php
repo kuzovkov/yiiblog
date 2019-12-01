@@ -27,10 +27,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'did',
+            'did:integer',
             'title',
-            'img',
-            'default',
+            [
+                'attribute' => 'img',
+                'format' => 'raw',
+                'value' => function($item){
+                    return ($item->img && file_exists($item->relative_images_dir.'/'.basename($item->img)))?
+                        sprintf('<img style="max-width: 50px; max-height: 50px;" src="%s"/>', $item->img)
+                        :
+                        'no image';
+                }
+            ],
+            'default:boolean',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

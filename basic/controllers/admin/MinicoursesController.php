@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\base\Module;
+use yii\web\UploadedFile;
 
 /**
  * MinicoursesController implements the CRUD actions for Minicourses model.
@@ -83,8 +84,16 @@ class MinicoursesController extends Controller
     {
         $model = new Minicourses();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'img');
+            if ($file){
+                $file->saveAs($model->relative_images_dir.'/'.$file->baseName.'.'.$file->extension);
+                $model->img = $file->baseName.'.'.$file->extension;
+            }
+            if ($model->save())
+                return $this->redirect(['view', 'id' => $model->id]);
+            else
+                return $this->redirect(['error', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -102,9 +111,24 @@ class MinicoursesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $curr_img = $model->img;
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'img');
+            if ($file){
+                if ($curr_img){
+                    $oldfile = $model->relative_images_dir.'/'.basename($curr_img);
+                    if (file_exists($oldfile) && is_file($oldfile))
+                        unlink($oldfile);
+                }
+                $file->saveAs($model->relative_images_dir.'/'.$file->baseName.'.'.$file->extension);
+                $model->img = $file->baseName.'.'.$file->extension;
+            }else{
+                $model->img = basename($curr_img);
+            }
+            if ($model->save())
+                return $this->redirect(['view', 'id' => $model->id]);
+            else
+                return $this->redirect(['error', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -121,7 +145,11 @@ class MinicoursesController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $imgfile = $model->relative_images_dir.'/'.basename($model->img);
+        if (file_exists($imgfile) && is_file($imgfile))
+            unlink($imgfile);
+        $model->delete();
 
         return $this->redirect(['index']);
     }
